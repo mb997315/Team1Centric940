@@ -23,6 +23,10 @@ textarea {
     max-width: 280px;
 }
 .jumbotron {
-    background-color: darkslateblue;
+    background-color: #b200ff;
+    color: white;
+}
+.navbar-inverse {
+    background-color: white;
     color: white;
 }
