@@ -8,8 +8,10 @@ namespace Team1Centric940.Models
 {
     public class Giver
     {
+        [Key]
         public int giverID { get; set; }
         [Display(Name = "Core value recognized")]
+        public int gratitudeId { get; set; }
         public CoreValue award { get; set; }
         [Display(Name = "ID of Person giving the recognition")]
         public Guid recognizor { get; set; }
