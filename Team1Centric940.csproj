@@ -168,8 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GiversController.cs" />
+    <Compile Include="Controllers\GratitudesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReceiversController.cs" />
     <Compile Include="DAL\MIS4200Team1Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +246,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Givers\Create.cshtml" />
+    <Content Include="Views\Givers\Delete.cshtml" />
+    <Content Include="Views\Givers\Details.cshtml" />
+    <Content Include="Views\Givers\Edit.cshtml" />
+    <Content Include="Views\Givers\Index.cshtml" />
+    <Content Include="Views\Receivers\Create.cshtml" />
+    <Content Include="Views\Receivers\Delete.cshtml" />
+    <Content Include="Views\Receivers\Details.cshtml" />
+    <Content Include="Views\Receivers\Edit.cshtml" />
+    <Content Include="Views\Receivers\Index.cshtml" />
+    <Content Include="Views\Gratitudes\Create.cshtml" />
+    <Content Include="Views\Gratitudes\Delete.cshtml" />
+    <Content Include="Views\Gratitudes\Details.cshtml" />
+    <Content Include="Views\Gratitudes\Edit.cshtml" />
+    <Content Include="Views\Gratitudes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

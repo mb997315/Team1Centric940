@@ -10,15 +10,18 @@ namespace Team1Centric940.Models
     {
         [Key]
         public int giverID { get; set; }
-        [Display(Name = "Core value recognized")]
         public int gratitudeId { get; set; }
+        [Display(Name = "Award")]
         public CoreValue award { get; set; }
-        [Display(Name = "ID of Person giving the recognition")]
+        [Display(Name = "Your Name")]
         public Guid recognizor { get; set; }
-        [Display(Name = "ID of Person receiving the recognition")]
-        public Guid recognized { get; set; }
+        [Display(Name = "Employee Being Recognized")]
+        public string recognized { get; set; }
         [Display(Name = "Date recognition given")]
-        public DateTime recognizationDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="(0:MM/DD/yyyy", ApplyFormatInEditMode = true)]
+        public Nullable<System.DateTime> recognizationDate { get; set; }
+        
         public enum CoreValue
         {
             Excellence = 1,
