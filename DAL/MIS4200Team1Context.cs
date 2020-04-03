@@ -12,7 +12,7 @@ namespace Team1Centric940.DAL
     {
         public MIS4200Team1Context() : base("name=DefaultConnection")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Team1Context, MIS4200Team1.Migrations.MISContext.Configuration>("DefaultConnection"));
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Team1Context, Team1Centric940.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
 
         public DbSet<Giver> Givers { get; set; }
