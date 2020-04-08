@@ -11,107 +11,107 @@ using Team1Centric940.Models;
 
 namespace Team1Centric940.Controllers
 {
-    public class ReceiversController : Controller
+    public class EmployeesController : Controller
     {
         private MIS4200Team1Context db = new MIS4200Team1Context();
 
-        // GET: Receivers
+        // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Receivers.ToList());
+            return View(db.Employees.ToList());
         }
 
-        // GET: Receivers/Details/5
+        // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Receiver receiver = db.Receivers.Find(id);
-            if (receiver == null)
+            Employees employees = db.Employees.Find(id);
+            if (employees == null)
             {
                 return HttpNotFound();
             }
-            return View(receiver);
+            return View(employees);
         }
 
-        // GET: Receivers/Create
+        // GET: Employees/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Receivers/Create
+        // POST: Employees/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "receiverId,gratitudeId,recognizor,recognized")] Receiver receiver)
+        public ActionResult Create([Bind(Include = "employeeId,firstName,lastName,email,giverId")] Employees employees)
         {
             if (ModelState.IsValid)
             {
-                db.Receivers.Add(receiver);
+                db.Employees.Add(employees);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(receiver);
+            return View(employees);
         }
 
-        // GET: Receivers/Edit/5
+        // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Receiver receiver = db.Receivers.Find(id);
-            if (receiver == null)
+            Employees employees = db.Employees.Find(id);
+            if (employees == null)
             {
                 return HttpNotFound();
             }
-            return View(receiver);
+            return View(employees);
         }
 
-        // POST: Receivers/Edit/5
+        // POST: Employees/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "receiverId,gratitudeId,recognizor,recognized")] Receiver receiver)
+        public ActionResult Edit([Bind(Include = "employeeId,firstName,lastName,email,giverId")] Employees employees)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(receiver).State = EntityState.Modified;
+                db.Entry(employees).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(receiver);
+            return View(employees);
         }
 
-        // GET: Receivers/Delete/5
+        // GET: Employees/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Receiver receiver = db.Receivers.Find(id);
-            if (receiver == null)
+            Employees employees = db.Employees.Find(id);
+            if (employees == null)
             {
                 return HttpNotFound();
             }
-            return View(receiver);
+            return View(employees);
         }
 
-        // POST: Receivers/Delete/5
+        // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Receiver receiver = db.Receivers.Find(id);
-            db.Receivers.Remove(receiver);
+            Employees employees = db.Employees.Find(id);
+            db.Employees.Remove(employees);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

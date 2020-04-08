@@ -16,7 +16,7 @@ namespace Team1Centric940.DAL
         }
 
         public DbSet<Giver> Givers { get; set; }
-        public DbSet<Receiver> Receivers { get; set; }
-        public DbSet<Gratitude> Gratitudes { get; set; }
+        public DbSet<Employees> Employees { get; set; }
+        
     }
 }

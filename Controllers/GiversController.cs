@@ -47,7 +47,7 @@ namespace Team1Centric940.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "giverID,gratitudeId,award,recognizor,recognized,recognizationDate")] Giver giver)
+        public ActionResult Create([Bind(Include = "giverID,award,recognizor,recognized,recognizationDate,employeeId")] Giver giver)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Team1Centric940.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "giverID,gratitudeId,award,recognizor,recognized,recognizationDate")] Giver giver)
+        public ActionResult Edit([Bind(Include = "giverID,award,recognizor,recognized,recognizationDate,employeeId")] Giver giver)
         {
             if (ModelState.IsValid)
             {
