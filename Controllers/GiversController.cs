@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -39,6 +40,8 @@ namespace Team1Centric940.Controllers
         // GET: Givers/Create
         public ActionResult Create()
         {
+            //create dropdown
+
             return View();
         }
 
@@ -47,15 +50,18 @@ namespace Team1Centric940.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "giverID,award,recognizor,recognized,recognizationDate,employeeId")] Giver giver)
+        public ActionResult Create([Bind(Include = "giverID,award,recongizer,recognized,recognizationDate,employeeId")] Giver giver)
         {
             if (ModelState.IsValid)
             {
+                Guid giverId;
+                Guid.TryParse(User.Identity.GetUserId(), out giverId);
+                giver.recongizer = giverId;
                 db.Givers.Add(giver);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            //create select list 
             return View(giver);
         }
 
@@ -79,7 +85,7 @@ namespace Team1Centric940.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "giverID,award,recognizor,recognized,recognizationDate,employeeId")] Giver giver)
+        public ActionResult Edit([Bind(Include = "giverID,award,recongizer,recognized,recognizationDate,employeeId")] Giver giver)
         {
             if (ModelState.IsValid)
             {

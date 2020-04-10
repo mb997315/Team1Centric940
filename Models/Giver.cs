@@ -18,7 +18,7 @@ namespace Team1Centric940.Models
 
         [Display(Name = "Your Name")]
 
-        public Guid recognizor { get; set; }
+        public Guid recongizer { get; set; }
 
         [Display(Name = "Employee Being Recognized")]
 

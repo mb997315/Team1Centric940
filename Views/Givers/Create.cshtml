@@ -23,17 +23,18 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.recognizor, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.recongizer, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.recognizor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.recognizor, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.recongizer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.recongizer, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.recognized, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @*//make into dropdown*@
                 @Html.EditorFor(model => model.recognized, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.recognized, "", new { @class = "text-danger" })
             </div>
