@@ -1,14 +1,32 @@
 ﻿@model IEnumerable<Team1Centric940.Models.Employees>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Employee Index";
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-6">
+            @using (Html.BeginForm("Index", "Employees", FormMethod.Get))
+            {
+                <p>
+                    Search by Employee name (first, last, both) <span class="glyphicon glyphicon-search"></span>
+                    @Html.TextBox("searchString")
+                    <input type="submit" value="Search" />
+                </p>
+            }
+
+        </div>
+        <div class="col-md-6">
+            @Html.ActionLink("Create New", "Create")
+        </div>
+    </div>
+
+</div>
+
+
 <table class="table">
     <tr>
         <th>
