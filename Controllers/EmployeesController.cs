@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -22,7 +23,7 @@ namespace Team1Centric940.Controllers
         }
 
         // GET: Employees/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
@@ -47,20 +48,30 @@ namespace Team1Centric940.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "employeeId,firstName,lastName,email,giverId")] Employees employees)
+        public ActionResult Create([Bind(Include = "employeeId,Email,firstName,lastName,PhoneNumber,Office,Position,hireDate")] Employees employees)
         {
             if (ModelState.IsValid)
             {
+                Guid giverId;
+                Guid.TryParse(User.Identity.GetUserId(), out giverId);
+                employees.employeeId = giverId;
                 db.Employees.Add(employees);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                //db.SaveChanges will throw an Exception if the user already exists
+                try
+                {
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
 
-            return View(employees);
+                }
+            }
+            return View();
         }
 
         // GET: Employees/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
@@ -79,7 +90,7 @@ namespace Team1Centric940.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "employeeId,firstName,lastName,email,giverId")] Employees employees)
+        public ActionResult Edit([Bind(Include = "employeeId,Email,firstName,lastName,PhoneNumber,Office,Position,hireDate")] Employees employees)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +102,7 @@ namespace Team1Centric940.Controllers
         }
 
         // GET: Employees/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
@@ -108,7 +119,7 @@ namespace Team1Centric940.Controllers
         // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
             Employees employees = db.Employees.Find(id);
             db.Employees.Remove(employees);

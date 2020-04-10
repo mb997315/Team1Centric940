@@ -30,16 +30,25 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.firstName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.lastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.giverId)
+            @Html.DisplayNameFor(model => model.Office)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hireDate)
         </th>
         <th></th>
     </tr>
@@ -47,16 +56,25 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.firstName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.lastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.email)
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.giverId)
+            @Html.DisplayFor(modelItem => item.Office)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hireDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.employeeId }) |
