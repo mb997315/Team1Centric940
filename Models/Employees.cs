@@ -17,6 +17,7 @@ namespace Team1Centric940.Models
         [Required]
         [Display(Name = "First Name")]
         public string firstName { get; set; }
+        public string fullName { get { return lastName + ", " + firstName; } }
         [Required]
         [Display(Name = "Last Name")]
         public string lastName { get; set; }
