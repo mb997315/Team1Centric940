@@ -38,10 +38,11 @@ namespace Team1Centric940.Controllers
         }
 
         // GET: Givers/Create
+        [Authorize]
         public ActionResult Create()
         {
             //create dropdown
-            ViewBag.employeeID = new SelectList(db.Employees, "employeeId", "fullName");
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "fullName");
 
             return View();
         }
@@ -67,6 +68,7 @@ namespace Team1Centric940.Controllers
         }
 
         // GET: Givers/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
