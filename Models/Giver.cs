@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -19,10 +20,15 @@ namespace Team1Centric940.Models
         [Display(Name = "Your Name")]
 
         public Guid recongizer { get; set; }
+        [ForeignKey("recongizer")]
+
+        public virtual Employees giver { get; set; }
 
         [Display(Name = "Employee Being Recognized")]
 
-        public string recognized { get; set; }
+        public Guid recognized { get; set; }
+        [ForeignKey("recognized")]
+        public virtual Employees reciever { get; set; }
 
         [Display(Name = "Date recognition given")]
 

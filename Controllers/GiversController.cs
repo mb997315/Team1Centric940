@@ -42,7 +42,7 @@ namespace Team1Centric940.Controllers
         public ActionResult Create()
         {
             //create dropdown
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "fullName");
+            ViewBag.recognized = new SelectList(db.Employees, "employeeId", "fullName");
 
             return View();
         }

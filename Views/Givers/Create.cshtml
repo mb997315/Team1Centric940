@@ -35,7 +35,7 @@
             @Html.LabelFor(model => model.recognized, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @*//make into dropdown*@
-                @Html.DropDownList("employeeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("recognized", null, htmlAttributes: new { @class = "form-control" })
                 @*@Html.EditorFor(model => model.recognized, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.recognized, "", new { @class = "text-danger" })
             </div>

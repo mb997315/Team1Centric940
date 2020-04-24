@@ -35,10 +35,10 @@
             @Html.DisplayFor(modelItem => item.award)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.recongizer)
+            @Html.DisplayFor(modelItem => item.giver.fullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.recognized)
+            @Html.DisplayFor(modelItem => item.reciever.fullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.recognizationDate)
