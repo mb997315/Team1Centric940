@@ -100,6 +100,7 @@ namespace Team1Centric940.Controllers
         }
 
         // GET: Givers/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

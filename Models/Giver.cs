@@ -34,7 +34,7 @@ namespace Team1Centric940.Models
 
         [DataType(DataType.Date)]
 
-        [DisplayFormat(DataFormatString = "(0:MM/DD/yyyy", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
 
         public Nullable<System.DateTime> recognizationDate { get; set; }
 

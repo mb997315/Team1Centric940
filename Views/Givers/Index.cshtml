@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.recognizationDate)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.employeeId)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -43,13 +43,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.recognizationDate)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.employeeId)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.giverID }) |
             @Html.ActionLink("Details", "Details", new { id=item.giverID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.giverID })
+           
         </td>
     </tr>
 }
